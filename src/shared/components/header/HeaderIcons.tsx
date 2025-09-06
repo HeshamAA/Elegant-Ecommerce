@@ -2,11 +2,11 @@ import { Search, ShoppingCart, Heart, User, Sun, Moon } from "@/shared/component
 import { useTheme } from "@/shared/hooks";
 import { Link,useAppSelector } from "@/shared/libs";
 
-export default function HeaderIcons() {
+export default function HeaderIcons({welcomeMessage}: {welcomeMessage: string}) {
   const { theme, setTheme, isDark } = useTheme();
   const { cartItems } = useAppSelector((state) => state.cart);
   const { user } = useAppSelector((state) => state.auth);
-
+console.log(welcomeMessage);
   const toggleTheme = () => {
     setTheme(isDark ? 'light' : 'dark');
   };
@@ -55,9 +55,10 @@ export default function HeaderIcons() {
       {/* User */}
       <Link
         to={user ? "/profile" : "/auth/login"}
-        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center gap-2"
       >
         <User className="h-5 w-5" />
+        <p>{welcomeMessage}</p>
       </Link>
     </div>
   );

@@ -15,17 +15,16 @@ const Header = () => {
   const wishlistItemCount = useAppSelector(
     (state) => state.auth.user?.user?.wishlist?.length || 0
   );
-  const [welcomeMessage, setWelcomeMessage] = useState("");
+  const [welcomeMessage, setWelcomeMessage] = useState("Welcome, Guest");
   const {user} = useAppSelector((state) => state.auth);
-
+ 
   useEffect(() => {
-    let message = "";
+    
     if (user?.user) {
-      message = `Welcome, ${user.user.name || "User"}`;
-    } else if (localStorage.getItem("guest") === "true") {
-      message = "Welcome, Guest";
+      setWelcomeMessage(`Welcome, ${user.user.name || "User"}`);
     }
-    setWelcomeMessage(message);
+    
+
   }, [location, user]);
 
   // Close the menu when route changes
@@ -40,6 +39,9 @@ const Header = () => {
     return location.pathname.startsWith(path);
   };
 
+
+
+console.log(welcomeMessage);
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ">
       <div className="container flex h-16 items-center mx-auto justify-center ">
@@ -58,6 +60,7 @@ const Header = () => {
           cartItemCount={cartItemCount}
           wishlistItemCount={wishlistItemCount}
           isCurrentPath={isCurrentPath}
+          welcomeMessage={welcomeMessage}
         />
         <div className="flex items-center space-x-4">
           <UserMenu />

@@ -23,7 +23,6 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
   return (
     <div className="md:hidden border-t">
       <nav className="flex flex-col space-y-4 p-4">
-        <WelcomeMessage message={welcomeMessage} className="mb-2" />
 
         <Link
           to="/"

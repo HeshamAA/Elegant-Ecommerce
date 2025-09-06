@@ -11,7 +11,7 @@ export const useProduct = (id: string) => {
   const [addToWishlist] = useAddToWishlistMutation();
   const [removeFromWishlist] = useRemoveFromWishlistMutation();
 
-  const isInWishlist = user.user.wishlist?.some((item) => item === String(product.id));
+  const isInWishlist = user?.user?.wishlist?.some((item) => item === String(product.id));
   const [selectedColor, setSelectedColor] = useState(
     product?.colors[0] || "Default"
   );
