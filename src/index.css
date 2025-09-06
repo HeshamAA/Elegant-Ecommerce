@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-display: swap
+}
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 215 26% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 26% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 26% 17%;
+
+    --primary: 217 91% 71%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 212 16% 32%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 212 12% 45%;
+
+    --accent: 217 91% 71%;
+    --accent-foreground: 215 26% 17%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 215 26% 17%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 215 26% 17%;
+    --foreground: 210 40% 98%;
+
+    --card: 214 22% 27%;
+    --card-foreground: 210 71% 94%;
+
+    --popover: 214 22% 27%;
+    --popover-foreground: 210 71% 94%;
+
+    --primary: 217 91% 71%;
+    --primary-foreground: 215 26% 17%;
+
+    --secondary: 214 22% 27%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 214 18% 23%;
+    --muted-foreground: 210 40% 80%;
+
+    --accent: 217 91% 71%;
+    --accent-foreground: 210 71% 94%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214 18% 23%;
+    --input: 214 18% 23%;
+    --ring: 217 91% 71%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.fashion-gradient-dark {
+  @apply bg-gradient-to-r from-pink-800 to-pink-600;
+}
+
+.fashion-gradient-light {
+  @apply bg-gradient-to-r from-pink-300 to-pink-100;
+}
+
+.fashion-gradient-button {
+  @apply bg-gradient-to-r from-pink-800 to-pink-300 hover:from-pink-700 hover:to-pink-400;
+}
+
+.cta-button-light {
+  @apply relative overflow-hidden bg-gradient-to-r from-pink-600 to-pink-400 text-white shadow-md transition-all hover:shadow-lg;
+}
+
+.cta-button-dark {
+  @apply relative overflow-hidden bg-gradient-to-r from-pink-300 to-pink-500 text-pink-900 shadow-md transition-all hover:shadow-lg;
+}
+
+.product-card {
+  @apply relative overflow-hidden rounded-md transition-all duration-300 hover:shadow-xl;
+}
+
+.product-card:hover img {
+  @apply scale-105 transition-transform duration-500;
+}
+
+.product-card .quick-add {
+  @apply absolute bottom-0 left-0 right-0 translate-y-full bg-pink-900 bg-opacity-95 px-4 py-2 text-white transition-transform duration-300;
+}
+
+.product-card:hover .quick-add {
+  @apply translate-y-0;
+}
+
+.category-tab {
+  @apply relative inline-block cursor-pointer px-4 py-2 text-muted-foreground transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:text-primary;
+}
+
+.category-tab.active {
+  @apply text-primary after:w-full;
+}
+
+.bg-fashion-light {
+  @apply bg-gradient-to-r from-pink-50 to-pink-100;
+}
+
+.bg-fashion-medium {
+  @apply bg-gradient-to-r from-pink-100 to-pink-200;
+}
+
+.bg-fashion-dark {
+  @apply bg-gradient-to-r from-pink-800 to-pink-900;
+}
+
+.product-info-panel {
+  @apply rounded-lg bg-pink-100/50 p-6 dark:bg-pink-800/30;
+}
+
+.btn-hover-effect {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.btn-hover-effect::after {
+  @apply absolute inset-0 -translate-x-full bg-white bg-opacity-20 transition-transform duration-300 content-[''];
+}
+
+.btn-hover-effect:hover::after {
+  @apply translate-x-0;
+}
+
+.glass-effect {
+  @apply backdrop-blur-md bg-pink-50/20 dark:bg-pink-900/40 border border-pink-100/30 dark:border-pink-700/50;
+}
+
+.fashion-heading {
+  @apply font-medium tracking-wide;
+}
+
+.fashion-price {
+  @apply font-medium text-pink-900 dark:text-pink-300;
+}
+
+.fashion-sale-price {
+  @apply text-red-500 dark:text-red-400;
+}
+
+.fashion-badge-new {
+  @apply bg-green-400 text-green-900 dark:bg-green-300 dark:text-green-800;
+}
+
+.fashion-badge-sale {
+  @apply bg-red-400 text-red-900 dark:bg-red-300 dark:text-red-800;
+}
+
+.fashion-badge-premium {
+  @apply bg-pink-300 text-pink-900 dark:bg-pink-400 dark:text-pink-900;
+}
+
+.fashion-highlight {
+  @apply transition-transform hover:-translate-y-1 hover:shadow-lg;
+}
+
+.gradient-underline {
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-gradient-to-r after:from-pink-800 after:to-pink-300 after:transition-transform after:duration-300 hover:after:scale-x-100;
+}
+
+.active-nav-link {
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-gradient-to-r after:from-pink-800 after:to-pink-300;
+}
+
+.gradient-border-bottom {
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gradient-to-r after:from-pink-800 after:to-pink-300 after:transition-all after:duration-300 hover:after:w-full;
+}
+
+.gradient-overlay {
+  @apply relative after:absolute after:inset-0 after:bg-gradient-to-t after:from-pink-900/40 after:to-transparent after:opacity-0 after:transition-opacity after:duration-300 hover:after:opacity-100;
+}
+
+.gradient-pulse {
+  @apply bg-gradient-to-r from-pink-800 to-pink-300 bg-[200%];
+}
+
+.price-tag {
+  @apply bg-pink-800 text-white px-2 py-1 rounded-md inline-block;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsla(var(--primary), 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsla(var(--primary), 0.6);
+  }
+}
+
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s infinite;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-bg {
+  background: radial-gradient(
+    ellipse at center,
+    hsla(var(--primary), 0.1) 0%,
+    transparent 70%
+  );
+}
