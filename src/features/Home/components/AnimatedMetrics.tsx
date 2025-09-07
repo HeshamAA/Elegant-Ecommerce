@@ -35,6 +35,8 @@ export const AnimatedMetrics = () => {
             <div
               key={metric.id}
               className="text-center p-6 rounded-xl bg-background"
+              data-aos="fade-up"
+              data-aos-delay={metric.id * 100}
             >
               <div className="text-4xl font-bold mb-2">
                 <span className="counter" data-target={metric.value}>

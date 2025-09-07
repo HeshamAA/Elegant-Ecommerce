@@ -4,7 +4,7 @@ import { Card, CardContent, Button, Link } from "@/features/Home";
 export const StyleFinderCta = () => {
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4" data-os="fade-up">
         <Card className="overflow-hidden border-none shadow-xl">
           <div className="grid md:grid-cols-2">
             <div className="bg-[url('https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center min-h-[300px]"></div>

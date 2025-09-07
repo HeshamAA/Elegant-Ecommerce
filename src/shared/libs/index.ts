@@ -24,3 +24,8 @@ export { default as useEmblaCarousel } from 'embla-carousel-react';
 
 export { Toaster, toast } from "react-hot-toast";
 export {useAppSelector, useAppDispatch} from "@/shared/state/hooks"
+
+
+import AOS from "aos";
+export  {AOS};
+

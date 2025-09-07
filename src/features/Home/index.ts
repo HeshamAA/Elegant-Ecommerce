@@ -76,7 +76,8 @@ export {
   Link,
   useEmblaCarousel,
   createApi,
-   fetchBaseQuery
+   fetchBaseQuery,
+   AOS
 } from "@/shared/libs";
 
 // Cart Feature Integration

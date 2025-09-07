@@ -8,16 +8,27 @@ import {
   AnimatedMetrics, 
   CountdownTimer, 
   ShopTheLook, 
-  BestSellers 
+  BestSellers,
+  useEffect,
+  AOS
 } from "@/features/Home";
+ import "aos/dist/aos.css";
 
 const HomePage = () => {
-  
+   useEffect(() => {
+    AOS.init({
+      duration: 2000, 
+      once: false,     
+    });
+  }, []);
+
+
+
   const targetDate = new Date();
   targetDate.setDate(targetDate.getDate() + 7);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-hidden">
       <HeroBanner />
 
       <div>
@@ -36,13 +47,14 @@ const HomePage = () => {
         <FeaturedBrands />
       </div>
 
-      <div className="relative">
+      <div className="relative" >
         <CountdownTimer
           targetDate={targetDate}
           title="Summer Sale Ends Soon!"
           description="Don't miss out on our biggest sale of the season. Shop now and save up to 70% on selected items."
           linkText="Shop Now"
           linkUrl="/category/all"
+        
         />
         <ShopTheLook />
       </div>

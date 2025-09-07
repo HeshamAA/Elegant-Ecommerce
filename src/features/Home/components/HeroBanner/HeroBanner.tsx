@@ -3,7 +3,7 @@ import { PremiumBadge, HeroTitle, StatsSection, CTASection, TrustIndicators } fr
 export const HeroBanner = () => {
   return (
     <section className="min-h-screen transition-all duration-700">
-      <div className="relative overflow-hidden hero-bg bg-background">
+      <div className="relative overflow-hidden hero-bg bg-background" data-aos="fade-up">
         {/* Interactive Background */}
         <div className="absolute inset-0 opacity-30 transition-all duration-700 bg-gradient-radial from-primary/15 to-transparent" />
 

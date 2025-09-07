@@ -39,6 +39,10 @@ export const useProduct = (id: string) => {
 
   
   const handleToggleWishlist = () => {
+    if(!user){
+      showToast.error("Please log in to add to your wishlist");
+      return;
+    }
     if (isInWishlist) {
    
       removeFromWishlist({

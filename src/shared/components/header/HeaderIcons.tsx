@@ -6,7 +6,7 @@ export default function HeaderIcons({welcomeMessage}: {welcomeMessage: string}) 
   const { theme, setTheme, isDark } = useTheme();
   const { cartItems } = useAppSelector((state) => state.cart);
   const { user } = useAppSelector((state) => state.auth);
-console.log(welcomeMessage);
+
   const toggleTheme = () => {
     setTheme(isDark ? 'light' : 'dark');
   };
