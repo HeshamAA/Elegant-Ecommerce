@@ -26,15 +26,10 @@ console.log(welcomeMessage);
         )}
       </button>
 
-      {/* Search */}
-      <button className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-        <Search className="h-5 w-5" />
-      </button>
-
       {/* Wishlist */}
       <Link
         to="/wishlist"
-        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative"
+        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative hidden md:inline-flex"
       >
         <Heart className="h-5 w-5" />
       </Link>
@@ -42,7 +37,7 @@ console.log(welcomeMessage);
       {/* Cart */}
       <Link
         to="/cart"
-        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative"
+        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative hidden md:inline-flex"
       >
         <ShoppingCart className="h-5 w-5" />
         {cartItems?.length > 0 && (
@@ -55,7 +50,7 @@ console.log(welcomeMessage);
       {/* User */}
       <Link
         to={user ? "/profile" : "/auth/login"}
-        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center gap-2"
+        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors items-center gap-2 hidden md:inline-flex"
       >
         <User className="h-5 w-5" />
         <p>{welcomeMessage}</p>

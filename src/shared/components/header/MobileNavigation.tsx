@@ -21,7 +21,9 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="md:hidden border-t">
+    <div className="md:hidden border- pt-5">
+      <WelcomeMessage message={welcomeMessage} />
+    
       <nav className="flex flex-col space-y-4 p-4">
 
         <Link
@@ -115,6 +117,24 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
           )}
         >
           Contact
+        </Link>
+         <Link
+          to="/wishlist"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            isCurrentPath("/wishlist") ? "text-foreground" : "text-foreground/60"
+          )}
+        >
+          Wishlist
+        </Link>
+         <Link
+          to="/cart"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            isCurrentPath("/cart") ? "text-foreground" : "text-foreground/60"
+          )}
+        >
+          Cart
         </Link>
 
         {user ? (
